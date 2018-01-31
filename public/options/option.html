@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Options</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style/options.css">
+</head>
+<body>
+  <h1>Setting</h1>
+  <fieldset>
+    <legend>Copy Style</legend>
+    <ul class="List">
+      <li>
+        <label>
+          <input type="radio" name="style" value="default" /> Browser default
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="style" value="none" /> None ruby
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="style" value="useRp" /> Use rp element (depends on author)
+        </label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <section>
+    <h2>Output</h2>
+    <div class="OutputExample">
+      <p class="OutputExample__text">
+        Copy
+        <ruby>Ruby
+          <rp>（</rp>
+          <rt>ルビ</rt>
+          <rp>）</rp>
+        </ruby> extension.
+      </p>
+      <span class="OutputExample__arrow">=></span>
+      <output class="OutputExample__output" aria-atomic="true" aria-live="polite"></output>
+    </div>
+  </section>
+
+  <button type="button" id="save" aria-controls="messageArea">Save</button>
+  <span id="messageArea" role="status" aria-live="polite"></span>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

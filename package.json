@@ -1,0 +1,32 @@
+{
+  "name": "copy-ruby",
+  "version": "0.0.1",
+  "description": "copy text formatter in ruby element",
+  "scripts": {
+    "start": "npm run watch:js & npm run watch:css & npm run watch:other",
+    "watch:js": "watchify src/app.js -o public/app.js -v -t babelify",
+    "watch:css": "npm run build:css -- --watch",
+    "watch:other": "watch 'npm run build:other' ./src",
+    "build": "npm run build:js && build:css && build:other",
+    "build:js": "browserify src/app.js -o public/app.js -t babelify",
+    "build:css": "postcss src/style/*.css -u csswring --no-map -o public/style/*.css",
+    "build:other": "cp -r ./src/options ./public && cp -r ./src/scripts ./public && cp -r ./src/manifest.json ./public"
+  },
+  "author": "masuP9",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^15.2.0",
+    "csswring": "^6.0.2",
+    "eslint": "^4.16.0",
+    "postcss-cli": "^4.1.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-fresh": "^2.3.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "^0.8.0",
+    "watch": "^1.0.2",
+    "watchify": "^3.10.0"
+  }
+}
